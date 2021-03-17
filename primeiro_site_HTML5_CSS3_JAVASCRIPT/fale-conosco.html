@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tudo Sobre Google Glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+    <script language="javascript"src="_javascript/funcoes.js"></script>
+    <script>
+        function calTotal() {
+            var quantidade = parseInt(document.getElementById('id-quantidade').value);
+            total = quantidade * 1500
+            document.getElementById('id-preco').value = total;
+        }
+    </script>
+</head>
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1> Google Glass </h1>
+                <h2> A revolução do Google está chegando </h2>
+            </hgroup>
+
+            <div id="espaco">
+                <!--espaço para ícone:google glass -->
+            </div>
+
+            <img id="icone" src="_imagens/contato.png"/>
+
+            <nav id="menu">
+                <h1> Menu Principal </h1>
+                <ul>
+                    <a href="index.html"><li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"> Home </li></a>
+                    <a href="specs.html"><li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')">  Especificações </li></a>
+                    <a href="fotos.html"><li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')" >  Fotos  </li></a>
+                    <a href="multimidia.html"><li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')">  Multimídia  </li></a>
+                    <a href="fale-conosco.html"><li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"> Fale conosco  </li></a>
+                </ul>
+            </nav>
+        </header>
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h3>Fale Conosco > Contato</h3>
+                        <h1>Formulário de Contato</h1>
+                        <h2>por Gustavo Guanabara</h2>
+                        <h3 class="direita">Atualizado em 23/Abril/2013</h3>
+                    </hgroup>
+                </header>
+            </article>
+        </section>
+        <form id="formulario" method="post" action="mailto:victorplz198@gmail.com">  
+
+            <fieldset id="usuario"> 
+                <legend> Identificação do Usuário </legend>
+                <p> <label for="id-nome"> Nome: </label> 
+                    <input type="text" id="id-nome" name="name-nome" size="20" maxlength="30" placeholder="Nome Completo" /><p>
+                <p> <label for="id-senha"> Senha: </label> 
+                    <input type="password" id="id-senha" name="name-senha" size="8" maxlength="8" placeholder="8 dígitos" /> <p>
+                <p> <label for="id-email"> E-mail: </label>        
+                    <input type="email" id="id-email" name="name-email" size="20" maxlength="30" placeholder="E-mail" /> <p>
+                <fieldset id="sexo">
+                    <legend>Sexo:</legend>
+                        <input type="radio" id="id-masculino" name="name-sexo" checked /> 
+                        <label for="id-masculino"> Masculino </label> <br/>
+                        <input type="radio" id="id-feminino" name="name-sexo" /> 
+                        <label for="id-feminino"> Feminino </label>
+                </fieldset>
+                    <p>Data de Nascimento: <input type="date" id="id-data" name="name-data" /></p>
+            </fieldset>
+
+            <fieldset id="endereco">
+                <legend>Endereço do Usuário</legend>
+                <p> <label for="id-logradouro"> Logradouro: </label> 
+                    <input type="text" id="id-logradouro" name="name-logradouro" size="20" maxlength="80" placeholder="avenida, rua, etc..." /> </p>
+                <p> <label for="id-numero"> Número:</label>
+                    <input type="number" id="id-numero" name="name-numero" min="0" max="9999"/> </p>
+                <p> <label for="id-estado"> Estado: </label> 
+                <select id="id-estado" name="name-estado">
+                    <optgroup label="Nordeste">
+                        <option value="PB" selected> Paraíba </option>
+                        <option value="PE"> Pernambuco </option>
+                    </optgroup> 
+                    <optgroup label="Centro-oeste">
+                        <option value="RJ"> Rio De Janeiro </option>
+                        <option value="SP"> São Paulo </option>
+                    </optgroup> 
+                </select></p>
+                <p> <label for="id-cidade" name="nome-cidade"> Cidade: </label>
+                    <input type="text" id="id-cidade" name="nome-cidade" size="20" maxlength="30" placeholder="Cidade" list="id-cidades" /> </p>
+                <datalist id="id-cidades" nome="nome-cidades" >
+                    <option value="João Pessoa"></option>
+                    <option value="Recife"></option>
+                    <option value="Rio De Janeiro"></option>
+                    <option value="São Paulo"></option>
+                </datalist>
+
+            </fieldset>
+
+             <fieldset id="mensagem">
+                <legend>Mensagem do Usuário</legend>
+                <p> <label for="id-urgencia"> Grau de Urgência: </label> 
+                    Mín <input type="range" id="id-urgencia" name="name-urgencia" min="0"  max="10" step="5" /> Máx </p>
+                <p> <label for="id-mensagem"> Mensagem: </label><br/>
+                    <textarea id="id-mensagem" cols="45" rows="5" placeholder="Deixe aqui sua mensagem "></textarea></p>
+            </fieldset>
+
+            <fieldset id="pagamento">
+               <legend> Quero um Google Glass</legend>
+                <P> <input type="checkbox" id="id-adquirir" name="name-adquirir" checked /> 
+                    <label for="id-adquirir"> Gostaria de adquirir um Google Glass quando disponível </label></P>
+                <p> <label for="id-cor"> Cor: </label>
+                    <input type="color" id="id-cor" name="name-cor" value="#ffffff" /></p>
+                <p> <label for="id-quantidade" > Quantidade: </label> 
+                    <input type="number" id="id-quantidade" name="name-quantidade" min="0" max="5" value="0"  oninput="calTotal()" /></p>
+                <P> <label for="id-preco"> Preço Total: R$ </label>
+                    <input type="text" id="id-preco" name="name-preco" placeholder="Total à pagar" readonly />  
+            </fieldset>
+
+            <input type="image" id="id-botao" name="name-botao" src="_imagens/botao-enviar.png" />
+        </form>
+
+        <footer id="rodape">
+            <p> Copyright 2013 - by Gustavo Guanabara<br/>
+            <a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+        </footer>
+    </div>
+</body>
+</html>
