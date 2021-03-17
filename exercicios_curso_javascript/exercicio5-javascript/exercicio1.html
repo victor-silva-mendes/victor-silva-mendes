@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Modelo de Exercício</title>
+    <link type="text/css" rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+    <header>
+        <h1>Analisador de números</h1>
+    </header>
+    <section>
+        <div>
+            <p><label for="id-numero">Número (entre 1 e 100):</label>
+                <input type="number" id="id-numero" name="name-numero" />
+                <input type="button" value="Adicionar" id="id-botao1" name="name-botao1" onclick="adicionar()"/>
+            </p>
+            <select id="campo" size="10" disabled></select>
+        </div>
+        <div id="res">
+           
+        </div >
+        <input type="button" value="Finalizar" id="id-botao2" name="name-botao2" onclick="analisar()"/>
+    </section>
+    <footer>
+        <p> Curso em vídeo </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
